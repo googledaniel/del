@@ -7,6 +7,7 @@ export default function App(props) {
 	useEffect(() => {
 		(async () => {
 			try {
+				const response = await fetch('/api/questions')
 
 			} catch {
 
@@ -14,11 +15,11 @@ export default function App(props) {
 		})();
 	}, [rubric]);
 
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-		const
-		setRubric()
-	}
+	// const handleSubmit = async (e) => {
+	// 	e.preventDefault();
+	// 	const
+	// 	setRubric()
+	// }
 
 //form - handle submit gets the rubricModel and set rubric
 

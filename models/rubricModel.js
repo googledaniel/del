@@ -1,21 +1,7 @@
 const rubricModel = {
 	3: {
-		FE: {
-			coding: 2,
-			systemDesign: 0,
-			distributedSystems: 0,
-			FETechnologies: 2,
-			iOS: 0,
-			android: 0
-		},
-		BE: {
-			coding: 4,
-			systemDesign: 0,
-			distributedSystems: 0,
-			FETechnologies: 0,
-			iOS: 0,
-			android: 0
-		}
+		FE: ['coding3', 'coding3', 'FETech3', 'FETech3', 'culture3'],
+		BE: ['coding3', 'coding3', 'coding3', 'coding3', 'culture3']
 	}
 }
 

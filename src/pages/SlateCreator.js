@@ -17,18 +17,38 @@ const Question = {
 
 
 
+
+
 const SlateCreator = (level, domain) => {
-	console.log(level, domain)
 
 	const slateMap = rubricModel[level][domain]
-	console.log('slatemap is:' + slateMap);
+	// console.log('slatemap is:' + slateMap);
+
+	let num = 0;
+	const usedQuestion = [];
 
 	const NewSlate = slateMap.map(item => {
-		// let usedNum = {};
-		// const num = Math.Floor(Math.random(Question.item.length))
-		const num = Math.floor(Math.random()*2)
 
-		return (Question[item][num])
+		//This is a recursive callback to make sure each question is unique for this slate:
+		const getNum = () => {
+			num = Math.floor(Math.random()*(Question[item].length))
+			const uniqueItem = item + num
+			if (usedQuestion.indexOf(uniqueItem) >= 0) {
+				console.log(`caught duplicate ${item+num}`)
+				getNum()
+			} else {
+				usedQuestion.push(uniqueItem)
+			}
+		}
+
+
+			getNum();
+
+
+			return (Question[item][num])
+
+
+
 	})
 
 	console.log(NewSlate)
